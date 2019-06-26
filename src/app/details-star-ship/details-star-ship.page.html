@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>details-StarShip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-item>
+<ion-label>
+{{transferDataService.starShipDetail.name}}
+</ion-label>
+</ion-item>
+<ion-item>
+<ion-label>
+{{transferDataService.starShipDetail.model}}
+</ion-label>
+</ion-item>
+<ion-item>
+<ion-label>
+{{transferDataService.starShipDetail.crew}}
+</ion-label>
+</ion-item> 
+<ion-item>
+    <ion-button  (click)="ReturnHome()">Home</ion-button>
+    <ion-button  (click)="Delete()">Delete</ion-button>
+</ion-item>   
+
+</ion-content>

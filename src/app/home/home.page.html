@@ -7,8 +7,59 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <ion-item>
+        <ion-label>
+          Action
+        </ion-label>
+        <ion-button  (click)="AddStarShip()">Add StarShip</ion-button>
+    </ion-item>
+    <ion-item>
+    <form (ngSubmit)="getStarship()">
+        <ion-item>
+          <ion-label>Todo</ion-label>
+          <ion-input type="number" [(ngModel)]="idStarhip" name="title"></ion-input>
+        </ion-item>
+   
+        <ion-button ion-button type="submit" block>Search StarShip</ion-button>
+      </form>
+    </ion-item>
+
+    <table>
+      <thead>
+          <tr>
+              <th >Nom</th>
+              <th >Model</th>
+              <th >Crew</th>
+          </tr>
+      </thead>
+      <tbody *ngFor="let Starship of transferDataService.FavoriteStarships">
+          <tr>
+              <td>{{Starship.name}}</td>
+              <td>{{Starship.model}}</td>
+              <td>{{Starship.crew}}</td>
+              <td><ion-button  (click)="favoriteRemove(Starship)">favorite Remove</ion-button></td>
+          </tr>
+        </tbody>
+  </table>
+
+
+
+      <table>
+          <thead>
+              <tr>
+                  <th >Nom</th>
+                  <th >Model</th>
+                  <th >Crew</th>
+              </tr>
+          </thead>
+          <tbody *ngFor="let Starship of transferDataService.Starships">
+              <tr>
+                  <td>{{Starship.name}}</td>
+                  <td>{{Starship.model}}</td>
+                  <td>{{Starship.crew}}</td>
+                  <td><ion-button  (click)="DetailsStarShip(Starship)">Détails</ion-button></td>
+                  <td><ion-button  (click)="favoriteAdd(Starship)">favorite Add</ion-button></td>
+              </tr>
+            </tbody>
+      </table>
 </ion-content>
