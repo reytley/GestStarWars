@@ -5,14 +5,50 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<!-- 
+  <ion-col>
+        </ion-col>
 
+-->
 <ion-content>
-    <ion-item>
-        <ion-label>
-          Action
-        </ion-label>
-        <ion-button  (click)="AddStarShip()">Add StarShip</ion-button>
-    </ion-item>
+
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label>
+                  Action
+                </ion-label>
+                <ion-button  (click)="AddStarShip()">Add StarShip</ion-button>
+                <ion-button  (click)="GestionStarShip()">Gestion StarShip</ion-button>
+            </ion-item>
+        </ion-col>
+        
+        <ion-col>
+            <table>
+                <thead>
+                    <tr>
+                        <th >Nom</th>
+                        <th >Model</th>
+                        <th >Crew</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let Starship of transferDataService.FavoriteStarships">
+                    <tr>
+                        <td>{{Starship.name}}</td>
+                        <td>{{Starship.model}}</td>
+                        <td>{{Starship.crew}}</td>
+                        <td><ion-button  (click)="favoriteRemove(Starship)">favorite Remove</ion-button></td>
+                    </tr>
+                  </tbody>
+            </table>
+          </ion-col>
+        <ion-col>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+       <!--
+
     <ion-item>
     <form (ngSubmit)="getStarship()">
         <ion-item>
@@ -24,23 +60,6 @@
       </form>
     </ion-item>
 
-    <table>
-      <thead>
-          <tr>
-              <th >Nom</th>
-              <th >Model</th>
-              <th >Crew</th>
-          </tr>
-      </thead>
-      <tbody *ngFor="let Starship of transferDataService.FavoriteStarships">
-          <tr>
-              <td>{{Starship.name}}</td>
-              <td>{{Starship.model}}</td>
-              <td>{{Starship.crew}}</td>
-              <td><ion-button  (click)="favoriteRemove(Starship)">favorite Remove</ion-button></td>
-          </tr>
-        </tbody>
-  </table>
 
 
 
@@ -62,4 +81,8 @@
               </tr>
             </tbody>
       </table>
+      
+--> 
+
+
 </ion-content>

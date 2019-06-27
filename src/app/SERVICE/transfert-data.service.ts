@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Planet } from './planet';
-import { People } from './people';
-import { Starship } from './starship';
-import { ApiService } from './api.service';
+import { Planet } from '../BO/planet';
+import { People } from '../BO/people';
+import { Starship } from '../BO/starship';
+
+import { STARSHIPSDALService } from '../DAL/starships-dal.service';
+
+import { ApiService } from '../API/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import * as firebase from 'firebase/app';
+
 import 'firebase/database';
 @Injectable({
   providedIn: 'root'
@@ -17,11 +21,14 @@ export class TransfertDataService {
   FavoriteStarships: Array<Starship>;
   starShipDetail: Starship;
   idUser: number;
-  constructor(private storage: Storage,private apiService: ApiService) {
+  constructor(private storage: Storage,private apiService: ApiService,private STARSHIPSDALService: STARSHIPSDALService) {
     this.Planets = new Array<Planet>();
     this.Peoples = new Array<People>();
     this.Starships = new Array<Starship>();
     this.idUser = 1;
+
+    //Ajout des vaisseaux 
+    this.STARSHIPSDALService.setStarships();
     storage.get('ListFavoriteStarShips').then((starshipsTemp) => {
   
 
@@ -51,24 +58,6 @@ export class TransfertDataService {
       });
     }else{
       console.log("listeEn ligne");
-
-      this.getStarships().subscribe(
-
-        data =>{
-          let result: any = data;
-       console.log(data)
-       result.results.forEach(vaiseau => {
-        let starShipTemp: Starship = new Starship();
-      starShipTemp.name =     vaiseau.name;
-        starShipTemp.model =   vaiseau.model;
-        starShipTemp.crew =     vaiseau.crew;
-        this.Starships.push(starShipTemp);
-       });
-       console.log( this.Starships);
-       storage.set("ListStarShips",this.Starships);
-      }
-      );
-     
     }
   });
 
@@ -82,10 +71,7 @@ export class TransfertDataService {
     this.storage.get('ListFavoriteStarShips').then((starshipsTemp) => {
       console.log(starshipsTemp)
     });
-    let newData = firebase.database().ref(this.idUser+'/starships')
-    newData.set({
-      FavoriteStarships: this.FavoriteStarships
-    });
+  
   }
   favoriteRemove(StarShipFav: Starship){
     this.FavoriteStarships.splice(this.FavoriteStarships.indexOf(StarShipFav));
@@ -104,6 +90,8 @@ export class TransfertDataService {
     return   this.apiService.getStarship(id);
   }
   getStarships(){
+    console.log("Get DATA FIREBASE")
+    console.log(this.STARSHIPSDALService.getStarships);
     return   this.apiService.getStarships();
   }
 

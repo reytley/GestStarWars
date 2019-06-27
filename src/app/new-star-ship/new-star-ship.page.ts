@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TransfertDataService } from '../transfert-data.service';
-import { Starship } from '../starship';
+import { TransfertDataService } from '../SERVICE/transfert-data.service';
+import { Starship } from '../BO/starship';
 import { FormBuilder, Validators} from '@angular/forms';
 
 @Component({

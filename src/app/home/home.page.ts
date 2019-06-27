@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TransfertDataService } from '../transfert-data.service';
-import { Starship } from '../starship';
+import { TransfertDataService } from '../SERVICE/transfert-data.service';
+import { Starship } from '../BO/starship';
 import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
@@ -25,10 +25,15 @@ export class HomePage {
   favoriteAdd(starship: Starship){
     this.transferDataService.favoriteAdd(starship);
   }
+  //HOME
   AddStarShip() {
-
     this.router.navigate(["/new-star-ship"]);
-    }
+  }
+
+  GestionStarShip(){
+    this.router.navigate(["/gestion-bdd"]); 
+  }
+
   DetailsStarShip(StarShipTemp: Starship) {
    
   this.transferDataService.starShipDetail = StarShipTemp;
