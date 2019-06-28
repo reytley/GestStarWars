@@ -16,13 +16,11 @@ export class GestionBddPage implements OnInit {
 
   constructor(private TransfertDataService: TransfertDataService,private PlayerService: PlayerService,private router: Router,private STARSHIPSDALService: STARSHIPSDALService,private PlanetsDalService: PlanetsDalService,private PeoplesDalService:PeoplesDalService)
    {
-   this.remplissageBaseLocal();
+
    
    }
 
-  async remplissageBaseLocal(){
-     this.TransfertDataService.Planets = await this.PlanetsDalService.getPlanets();
-   }
+
   AddStarShip() {
     this.router.navigate(["/new-star-ship"]);
   }
