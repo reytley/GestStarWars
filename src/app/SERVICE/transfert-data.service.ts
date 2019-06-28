@@ -25,7 +25,7 @@ export class TransfertDataService {
     this.Peoples = new Array<People>();
     this.Starships = new Array<Starship>();
     this.idUser = 1;
-
+    
     //Ajout des vaisseaux 
     this.STARSHIPSDALService.setStarships();
     storage.get('ListFavoriteStarShips').then((starshipsTemp) => {
@@ -47,7 +47,7 @@ export class TransfertDataService {
 
     storage.get('ListStarShips').then((starshipsTemp) => {
       console.log(starshipsTemp)
-      console.log(starshipsTemp[0])
+ 
 
     if(starshipsTemp != null){
       console.log("listeLocal");

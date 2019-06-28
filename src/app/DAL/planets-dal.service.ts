@@ -14,6 +14,18 @@ export class PlanetsDalService {
   resetPlanets(){
     
   }
+  getPlanets(){
+    
+    console.log("getPlanets");
+      let Planets: Array<Planet>= new Array<Planet>();
+      firebase.database().ref('Planets/').on('value',resp => {
+      
+      Planets = resp.val();
+      console.log("Planets updated : "+ Planets);
+      return Planets;
+      });
+      return Planets;
+  }
  setPlanets(){
   let PLanets: Array<Planet> = new Array<Planet>();
       this.apiService.getPlanets().subscribe(

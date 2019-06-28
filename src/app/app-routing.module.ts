@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'tag-general', loadChildren: './tag-general/tag-general.module#TagGeneralPageModule' },
   { path: 'gestion-player', loadChildren: './gestion-player/gestion-player.module#GestionPlayerPageModule' },
   { path: 'player-profil', loadChildren: './player-profil/player-profil.module#PlayerProfilPageModule' },
+  { path: 'connexion', loadChildren: './connexion/connexion.module#ConnexionPageModule' },
+  { path: 'inscription', loadChildren: './inscription/inscription.module#InscriptionPageModule' },
 ];
 
 @NgModule({

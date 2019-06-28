@@ -29,7 +29,7 @@ export class AppComponent {
       icon: 'home',
     },{
       title : 'Profil',
-      url: '/gestion-bdd',
+      url: '/player-profil',
       icon: 'Contact', 
     },{
       title : 'Gestion Players',
