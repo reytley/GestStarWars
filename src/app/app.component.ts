@@ -15,11 +15,33 @@ var firebaseConfig = {
   appId: "1:971405624816:web:b7d9337177aecd02"
 };
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+  public appMenu= [
+    {
+      title : 'Home',
+      url: '/home',
+      icon: 'home',
+    },{
+      title : 'Profil',
+      url: '/gestion-bdd',
+      icon: 'Contact', 
+    },{
+      title : 'Gestion Players',
+      url: '/gestion-player',
+      icon: 'Contacts', 
+    },  {
+      title : 'Gestion données',
+      url: '/gestion-bdd',
+      icon: 'analytics',
+    }
+  ]
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

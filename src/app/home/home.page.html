@@ -1,7 +1,10 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start"> 
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      Menu
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,17 +15,24 @@
 -->
 <ion-content>
 
-    <ion-grid>
+
+<ion-grid>
+<ion-row>
+<ion-col>
+
+    <ion-button shape="round">Round Button</ion-button>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+
+</ion-content>
+  
+       <!--
+
+  <ion-grid>
         <ion-row>
-        <ion-col>
-            <ion-item>
-                <ion-label>
-                  Action
-                </ion-label>
-                <ion-button  (click)="AddStarShip()">Add StarShip</ion-button>
-                <ion-button  (click)="GestionStarShip()">Gestion StarShip</ion-button>
-            </ion-item>
-        </ion-col>
+
         
         <ion-col>
             <table>
@@ -44,25 +54,7 @@
             </table>
           </ion-col>
         <ion-col>
-        </ion-col>
-        </ion-row>
-      </ion-grid>
-       <!--
-
-    <ion-item>
-    <form (ngSubmit)="getStarship()">
-        <ion-item>
-          <ion-label>Todo</ion-label>
-          <ion-input type="number" [(ngModel)]="idStarhip" name="title"></ion-input>
-        </ion-item>
-   
-        <ion-button ion-button type="submit" block>Search StarShip</ion-button>
-      </form>
-    </ion-item>
-
-
-
-
+        
       <table>
           <thead>
               <tr>
@@ -81,8 +73,12 @@
               </tr>
             </tbody>
       </table>
+        </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+
       
 --> 
-
-
-</ion-content>

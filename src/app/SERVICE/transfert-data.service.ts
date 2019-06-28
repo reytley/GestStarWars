@@ -8,7 +8,6 @@ import { STARSHIPSDALService } from '../DAL/starships-dal.service';
 import { ApiService } from '../API/api.service';
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
-import * as firebase from 'firebase/app';
 
 import 'firebase/database';
 @Injectable({

@@ -25,10 +25,7 @@ export class HomePage {
   favoriteAdd(starship: Starship){
     this.transferDataService.favoriteAdd(starship);
   }
-  //HOME
-  AddStarShip() {
-    this.router.navigate(["/new-star-ship"]);
-  }
+
 
   GestionStarShip(){
     this.router.navigate(["/gestion-bdd"]); 

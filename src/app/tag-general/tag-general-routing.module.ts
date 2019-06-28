@@ -8,6 +8,24 @@ const routes: Routes = [
     component: TagGeneralPage,
     children: [
       {
+        path: 'playerProfil',
+        children: [
+          {
+            path: '',
+            loadChildren: '../player-profil/player-profil.module#PlayerProfilPageModule',
+          }
+        ]
+      },    
+      {
+        path: 'gestionPlayer',
+        children: [
+          {
+            path: '',
+            loadChildren: '../gestion-player/gestion-player.module#GestionPlayerPageModule',
+          }
+        ]
+      },
+      {
         path: 'home',
         children: [
           {

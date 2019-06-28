@@ -11,7 +11,9 @@ export class PeoplesDalService {
 
   constructor(private apiService: ApiService,private storage: Storage) { }
 
-
+  resetPeoples(){
+    
+  }
   setPeoples(){
     let Peoples: Array<People> = new Array<People>();
         this.apiService.getPeoples().subscribe(
