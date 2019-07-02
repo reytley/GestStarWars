@@ -39,6 +39,10 @@ export class AppComponent {
       title : 'Gestion données',
       url: '/gestion-bdd',
       icon: 'analytics',
+    },  {
+      title : 'Connexion',
+      url: '/connexion',
+      icon: 'analytics',
     }
   ]
 

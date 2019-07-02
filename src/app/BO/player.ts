@@ -7,6 +7,8 @@ export class Player {
     gender:String;
     money: number;
     PlayerLife: number;
+    PlayerPower: number;
     hungryLife: number;
+    DayLife: number;
     Planets: Planet;
 }

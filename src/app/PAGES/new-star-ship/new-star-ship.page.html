@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>NewStarShip</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!--    <ion-tabs>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="schedule">
+            <ion-icon name="ios-add-circle"></ion-icon>
+            <ion-label>Add StarShips</ion-label>
+            <ion-badge>6</ion-badge>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="speakers">
+            <ion-icon name="contacts"></ion-icon>
+            <ion-label>Speakers</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="map">
+            <ion-icon name="map"></ion-icon>
+            <ion-label>Map</ion-label>
+          </ion-tab-button>
+      
+          <ion-tab-button tab="about">
+            <ion-icon name="information-circle"></ion-icon>
+            <ion-label>About</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs> -->
+      
+
+      
+
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+ 
+        <ion-item>
+            <ion-label>Name : </ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+        <ion-item>
+            <ion-label>Model : </ion-label>
+            <ion-input type="text" formControlName="model"></ion-input>
+          </ion-item>
+        <ion-item>
+            <ion-label>Crew : </ion-label>
+            <ion-input type="text" formControlName="crew"></ion-input>
+          </ion-item>
+          <ion-button  type="submit">Create StarShip</ion-button>
+    </form>
+
+
+</ion-content>

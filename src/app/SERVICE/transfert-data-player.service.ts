@@ -9,8 +9,32 @@ import { Player } from '../BO/player';
 export class TransfertDataPlayerService {
   idUser: number;
   player: Player;
-
+  // SI JOUEUR LOCAL NULL ALORS REGARDER DANS LES STOCKAGE LOCAL 
+  // SI STOCKAGE LOCAL CONTIENT JOUEUR ALORS LE RECUP
   constructor(private storage: Storage) {
+ 
+     /*
+      storage.get('player').then((PLayerTemp) => {
+       
 
+        if(PLayerTemp != null){
+          console.log("Local Player Find");
+          console.log("player");
+          storage.get('player').then((PLayerTemp) => {
+            this.player =PLayerTemp;
+            storage.set("player",this.player);
+          });
+        }else{
+          console.log("Player Null Login Page");
+          //this.player = new Player();
+          //storage.set("player",this.player);
+    
+        }
+      });
+*/
    }
+
+   setLocalPlayer(Player: Player){
+    this.storage.set("player",this.player);
+  }
 }
